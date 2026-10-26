@@ -230,11 +230,7 @@ function FadeSection({ children, style, delay = 0 }) {
     return () => obs.disconnect();
   }, []);
   return (
-    <div
-      ref={ref}
-      className={`section-fade${visible ? " visible" : ""}`}
-      style={{ ...style, transitionDelay: visible ? `${delay}ms` : "0ms" }}
-    >
+    <div ref={ref} className={`section-fade${visible ? " visible" : ""}`} style={{ ...style, transitionDelay: visible ? `${delay}ms` : "0ms" }}>
       {children}
     </div>
   );
