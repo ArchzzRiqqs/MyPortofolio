@@ -2,13 +2,27 @@
 <html lang="id">
 
 <head>
+  <script>
+    // Dijalankan sebelum render pertama: pasang tema tersimpan/sistem tanpa flash, tandai JS aktif.
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') d.dataset.theme = t;
+        else d.dataset.theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      } catch (e) { d.dataset.theme = 'dark'; }
+    })();
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Toriq Habil Fadhila | Software Engineer Portofolio</title>
   <meta name="description" content="Portofolio of Toriq Habil Fadhila, a Software Engineer and Business Information Systems student focused on backend, system design, and databases." />
   <meta name="author" content="Toriq Habil Fadhila" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-  <meta name="theme-color" content="#0b0f1a" />
+  <meta name="theme-color" content="#12141a" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
+  <meta name="color-scheme" content="dark light" />
   <meta name="google-site-verification" content="JMqyTUhwEOF86NOiPvQFrJWAdHESnWJPJS1EFq7a7d8" />
   <link rel="canonical" href="https://toriqqfme.my.id/" />
 
@@ -28,9 +42,6 @@
   <meta name="twitter:title" content="Toriq Habil Fadhila | Software Engineer Portofolio" />
   <meta name="twitter:description" content="Backend, system design, and databases." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" />
 
   <script type="application/ld+json">
   {

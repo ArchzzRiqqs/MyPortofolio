@@ -1,0 +1,71 @@
+/* Design tokens — satu-satunya tempat nilai warna, tipografi, spasi, dan motion didefinisikan. */
+:root {
+  /* Typography */
+  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --fs-display: clamp(3.25rem, 2rem + 6.4vw, 8rem);   /* nama di hero */
+  --fs-h2: clamp(2rem, 1.4rem + 2.6vw, 3.5rem);        /* judul section */
+  --fs-h3: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);     /* judul proyek */
+  --fs-lead: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);    /* kalimat utama (serif) */
+  --fs-body: 1rem;
+  --fs-small: 0.9375rem;
+  --fs-meta: 0.8125rem;                                 /* mono, metadata */
+
+  /* Spacing (skala 4px) */
+  --sp-1: 0.25rem; --sp-2: 0.5rem; --sp-3: 0.75rem; --sp-4: 1rem; --sp-5: 1.5rem;
+  --sp-6: 2rem; --sp-7: 3rem; --sp-8: 4.5rem; --sp-9: clamp(4.5rem, 3rem + 7vw, 9rem);
+
+  /* Layout */
+  --content-max: 1280px;
+  --gutter: clamp(1.25rem, 0.5rem + 3.5vw, 3rem);
+  --header-h: 64px;
+  --measure: 62ch;
+
+  /* Shape */
+  --radius: 2px;
+  --border: 1px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 160ms;
+  --dur-base: 320ms;
+  --dur-slow: 720ms;
+  --reveal-distance: 16px;
+}
+
+/* Dark (default) */
+:root, :root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #12141a;
+  --bg-raised: #191c24;
+  --text: #ece8df;
+  --text-dim: #a2a4ad;      /* 7.4:1 on --bg */
+  --line: #2a2d36;
+  --accent: #e8a33d;        /* 8.6:1 on --bg */
+  --on-accent: #12141a;
+  --focus: #f2c36e;
+}
+
+/* Light */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4f1ea;
+  --bg-raised: #ebe7dd;
+  --text: #1a1b1f;
+  --text-dim: #5a5c66;      /* 5.9:1 on --bg */
+  --line: #d6d1c4;
+  --accent: #8f5300;        /* 5.5:1 on --bg */
+  --on-accent: #f4f1ea;
+  --focus: #8f5300;
+}
+
+/* Preferensi sistem, selama pengguna belum memilih manual (script di index.html mengatur data-theme) */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --bg: #f4f1ea; --bg-raised: #ebe7dd; --text: #1a1b1f; --text-dim: #5a5c66;
+    --line: #d6d1c4; --accent: #8f5300; --on-accent: #f4f1ea; --focus: #8f5300;
+  }
+}

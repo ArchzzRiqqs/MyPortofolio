@@ -1,0 +1,29 @@
+[
+  {
+    "id": "01",
+    "slug": "kelanacoffe",
+    "title": "KelanaCoffe",
+    "kind": "SaaS · Point of Sale",
+    "desc": "Sistem POS SaaS untuk membantu warung kopi mengelola transaksi, produk, inventory, dan laporan operasional dalam satu platform terintegrasi.",
+    "tags": ["Laravel", "Blade", "Tailwind CSS", "MySQL"],
+    "link": "https://github.com/ToriqqHabilFadhilaa/SaaS-KelanaCoffe"
+  },
+  {
+    "id": "02",
+    "slug": "lifeos",
+    "title": "LifeOS",
+    "kind": "Produktivitas personal",
+    "desc": "Personal Productivity & Life Management Platform untuk membantu mengelola tugas, goals, habits, jadwal, dan perkembangan diri dalam satu platform terintegrasi.",
+    "tags": ["React", "Node.js", "MySQL"],
+    "link": "https://github.com/ToriqqHabilFadhilaa/LifeOS"
+  },
+  {
+    "id": "03",
+    "slug": "akademia",
+    "title": "Akademia",
+    "kind": "LMS · Ujian online",
+    "desc": "LMS berbasis web untuk mengelola pembelajaran, ujian online, dan sistem proctoring untuk membantu mengurangi kecurangan saat ujian.",
+    "tags": ["React", "Node.js", "PostgreSQL", "Prisma"],
+    "link": "https://github.com/ToriqqHabilFadhilaa/LMS-Akademia"
+  }
+]

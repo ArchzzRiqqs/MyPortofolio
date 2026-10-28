@@ -402,3 +402,21 @@ Special thanks to the open-source community and the developers behind the tools 
   <br />
   <strong>Designed & Developed by Toriq</strong>
 </p>
+
+
+---
+
+## Struktur & Motion
+
+```
+src/
+  content/        data.js (konten + aset) dan projects.json (teks proyek, dipakai juga oleh Remotion)
+  styles/         tokens.css (design tokens, tema gelap/terang) · base.css · motion.css · components.css
+  hooks/          useTheme, useInView, useActiveSection, useReducedMotion
+  components/     Header, Hero, About, Skills, Projects, ReelPlayer, Journey, Contact, Footer, ...
+motion/           Komposisi Remotion (terpisah dari app) — lihat motion/README.md
+public/media/     Hasil render Remotion (webm + poster)
+```
+
+Motion di aplikasi memakai CSS (satu easing, satu jarak, tiga durasi di `tokens.css`) dan menghormati
+`prefers-reduced-motion`. Remotion hanya merender cuplikan proyek; tidak dibundel ke dalam app.
