@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "studio": "remotion studio src/index.js",
-    "render": "remotion render src/index.js ProjectsReel out/reel.webm --codec=vp9 --crf=36",
-    "poster": "remotion still src/index.js ProjectsReel out/reel-poster.png --frame=60"
+    "render": "remotion render src/index.js ProjectsReel ../public/media/projects-reel.webm --codec=vp9 --crf=48 --scale=0.8 --muted",
+    "poster": "remotion still src/index.js ProjectsReel out/poster.png --frame=70 --scale=0.8"
   },
   "dependencies": {
     "@remotion/cli": "4.0.539",

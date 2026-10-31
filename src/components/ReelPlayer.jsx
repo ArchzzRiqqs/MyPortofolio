@@ -44,7 +44,7 @@ export default function ReelPlayer() {
         loop
         playsInline
         preload="none"
-        aria-label="Cuplikan bergerak ketiga proyek: KelanaCoffe, LifeOS, dan Akademia"
+        aria-label="Cuplikan bergerak proyek: KelanaCoffe, LifeOS, Akademia, KasWarga, dan Rangkum.in"
         onError={() => setFailed(true)}
       />
       {!reduced && !failed ? (

@@ -6,7 +6,7 @@ untuk merender satu aset: `public/media/projects-reel.webm` (+ poster `.webp`), 
 `src/components/ReelPlayer.jsx`.
 
 ## Komposisi
-`ProjectsReel` — 1200×675, 30 fps, 315 frame (10,5 dtk, loop mulus). Tiga adegan (KelanaCoffe, LifeOS, Akademia).
+`ProjectsReel` — 1200×675, 30 fps, 480 frame (16 dtk, loop). Lima adegan: tiga proyek dari `projects.json` + KasWarga dan Rangkum.in (didefinisikan di `src/reelProjects.js`).
 - Teks proyek dibaca dari `../src/content/projects.json` (sumber yang sama dengan situs). Mengubah teks/tag proyek di sana, lalu render ulang.
 - Screenshot ada di `motion/public/*.webp` (salinan dari `src/assets/projects/`); ganti bila screenshot di situs berubah.
 - Animasi deterministik (`interpolate` + easing yang sama dengan `--ease-out` situs), tanpa `Math.random` / waktu nyata.
@@ -20,7 +20,7 @@ npm run studio        # pratinjau interaktif
 
 # Render aset produksi langsung ke public/ (±280 kB)
 npx remotion render src/index.js ProjectsReel ../public/media/projects-reel.webm \
-  --codec=vp9 --crf=42 --scale=0.8 --muted
+  --codec=vp9 --crf=48 --scale=0.8 --muted
 
 # Poster (frame 70) -> konversi ke webp
 npx remotion still src/index.js ProjectsReel out/poster.png --frame=70 --scale=0.8

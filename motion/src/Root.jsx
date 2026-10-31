@@ -1,6 +1,6 @@
 import { Composition } from "remotion";
 import { ProjectsReel, SCENE_FRAMES, FPS } from "./ProjectsReel.jsx";
-import projects from "../../src/content/projects.json";
+import { reelProjects as projects } from "./reelProjects.js";
 
 export const Root = () => (
   <Composition

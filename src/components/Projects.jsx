@@ -65,7 +65,7 @@ export default function Projects() {
         </div>
       </div>
       <Reveal className="projects__reel">
-        <p className="mono dim projects__reel-caption">Cuplikan ketiga proyek</p>
+        <p className="mono dim projects__reel-caption">Cuplikan proyek</p>
         <ReelPlayer />
       </Reveal>
     </section>

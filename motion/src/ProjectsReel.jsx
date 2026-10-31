@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import {
   AbsoluteFill, Easing, Img, Sequence, continueRender, delayRender, interpolate, staticFile, useCurrentFrame,
 } from "remotion";
-import projects from "../../src/content/projects.json";
+import { reelProjects as projects } from "./reelProjects.js";
 
 export const FPS = 30;
-export const SCENE_FRAMES = 105; // 3.5s per project -> loop of 10.5s
+export const SCENE_FRAMES = 96; // 3,2 dtk per proyek
 
 // Same tokens as src/styles/tokens.css (dark theme) so the reel matches the site.
 const C = { bg: "#12141a", text: "#ECE8DF", dim: "#9A9BA3", line: "#2a2d36", accent: "#E8A33D" };
@@ -50,9 +50,9 @@ const Scene = ({ project, index }) => {
           {project.tags.map((t) => <span key={t}>{t}</span>)}
         </div>
       </div>
-      <div style={{ position: "absolute", right: 64, top: 150, width: 560, height: 280, overflow: "hidden",
+      <div style={{ position: "absolute", right: 64, top: 150, width: 560, height: Math.round(560 / project.aspect), overflow: "hidden",
         border: `1px solid ${C.line}`, clipPath: `inset(0 ${(1 - img) * 100}% 0 0)` }}>
-        <Img src={staticFile(`${project.title}.webp`)} style={{ width: "100%", height: "100%", objectFit: "cover",
+        <Img src={staticFile(project.file)} style={{ width: "100%", height: "100%", objectFit: "cover",
           transform: `scale(${1.06 - 0.06 * img + f * 0.0004})` }} />
       </div>
       <div style={{ position: "absolute", left: 0, bottom: 0, height: 3, background: C.accent,
